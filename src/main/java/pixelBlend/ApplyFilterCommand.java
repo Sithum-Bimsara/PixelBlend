@@ -1,17 +1,18 @@
 package pixelBlend;
 
-import pixelBlend.filters.GrayScaleFilter;
+import pixelBlend.filters.Filter;
+
 import java.awt.image.BufferedImage;
 
 public class ApplyFilterCommand implements ImageCommand {
     private BufferedImage previousState;
     private BufferedImage currentState;
-    private GrayScaleFilter filter;
+    private Filter filter;
 
-    public ApplyFilterCommand(BufferedImage image, GrayScaleFilter filter) {
+    public ApplyFilterCommand(BufferedImage image, Filter filter, Integer param) {
         this.previousState = deepCopy(image);
         this.filter = filter;
-        this.currentState = filter.addFilter(image);
+        this.currentState = filter.addFilter(image, param);
     }
 
     @Override

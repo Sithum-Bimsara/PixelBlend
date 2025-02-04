@@ -6,11 +6,7 @@ import java.awt.image.BufferedImage;
 public class BrightnessFilter implements Filter {
 
     @Override
-    public BufferedImage addFilter(BufferedImage image) {
-        return null;
-    }
-
-    public BufferedImage addFilter(BufferedImage image , int percentage) {
+    public BufferedImage addFilter(BufferedImage image , Integer percentage) {
 
         int width = image.getWidth();
         int height = image.getHeight();
