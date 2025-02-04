@@ -2,7 +2,13 @@ package pixelBlend;
 
 import pixelBlend.ApplyFilterCommand;
 import pixelBlend.filters.GrayScaleFilter;
+
 import pixelBlend.ImageHistory;
+
+import pixelBlend.filters.BrightnessFilter;
+import pixelBlend.handler.ImageHandler;
+
+
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
