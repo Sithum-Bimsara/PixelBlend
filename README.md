@@ -81,8 +81,10 @@ Image saved as new_photo.png
 ## Screenshots 📷
 Here are some screenshots showcasing the application's functionality:
 
-![Screenshot](./mnt/data/image.png)
-![Screenshot](./mnt/data/Screenshot%20(9522).png)
+### Grayscale Filter
+![Screenshot](assets/Indunil.png)
+![Screenshot](assets/Laplacian_Indunil.jpg)
+
 
 ---
 
