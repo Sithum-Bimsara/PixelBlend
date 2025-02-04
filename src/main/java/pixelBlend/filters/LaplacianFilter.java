@@ -7,7 +7,7 @@ import java.awt.image.Kernel;
 public class LaplacianFilter implements Filter {
 
     @Override
-    public BufferedImage addFilter(BufferedImage image) {
+    public BufferedImage addFilter(BufferedImage image, Integer param) {
         float[] LaplacianKernel = {
                 0f, -1f,  0f,
                 -1f,  4f, -1f,

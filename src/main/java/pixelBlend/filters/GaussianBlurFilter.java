@@ -7,7 +7,7 @@ import java.awt.image.Kernel;
 public class GaussianBlurFilter implements Filter{
 
     @Override
-    public BufferedImage addFilter(BufferedImage image) {
+    public BufferedImage addFilter(BufferedImage image, Integer param) {
         float[] GaussianBlurKernel = {
                 1/256f, 4/256f, 6/256f, 4/256f, 1/256f,
                 4/256f, 16/256f, 24/256f, 16/256f, 4/256f,

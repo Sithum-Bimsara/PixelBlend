@@ -8,7 +8,7 @@ public class BoxBlurFilter implements Filter {
 
 
     @Override
-    public BufferedImage addFilter(BufferedImage image) {
+    public BufferedImage addFilter(BufferedImage image, Integer param) {
         float[] BoxBlurKernel = {
                 1/9f, 1/9f, 1/9f,
                 1/9f, 1/9f, 1/9f,
