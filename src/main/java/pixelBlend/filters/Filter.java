@@ -1,7 +1,7 @@
 package pixelBlend.filters;
 
-import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public interface Filter {
-    Image addFilter(Image image);
+    BufferedImage addFilter(BufferedImage image);
 }
