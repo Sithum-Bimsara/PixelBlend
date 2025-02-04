@@ -12,8 +12,10 @@ PixelBlend is a **Java-based image filtering application** that allows users to 
   - 🔪 Sharpen
   - 🔍 Laplacian Edge Detection
 - **Undo & Redo** applied filters 🔄
+- **Add Multiple filters to one image**
 - **Command-Line Interface (CLI)** support 💻
 - **Web Interface (Coming Soon) 🌐**
+
 
 ---
 
@@ -21,7 +23,7 @@ PixelBlend is a **Java-based image filtering application** that allows users to 
 
 ### Clone the Repository 📥
 ```bash
- git clone https://github.com/Sithum-Bimsara/PixelBlend.git
+ https://github.com/code-GDC/PixelBlend.git
  cd PixelBlend
 ```
 
@@ -57,8 +59,8 @@ Choose an option:
 8. Apply Laplacian Filter
 9. Undo
 10. Redo
-11. Save and Exit
-12. Save
+11. Save 
+12. Save and Exit
 ```
 
 Applying a Brightness Filter:
