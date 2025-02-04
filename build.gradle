@@ -21,3 +21,9 @@ test {
 application {
     mainClass = 'pixelBlend.Main'
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'pixelBlend.Main'
+    }
+}
