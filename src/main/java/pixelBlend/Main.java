@@ -1,20 +1,20 @@
 package pixelBlend;
 
+import pixelBlend.filters.GrayScaleFilter;
+
 import pixelBlend.filters.*;
-import pixelBlend.handler.ImageHandler;
 
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 import java.util.Scanner;
-import java.util.Stack;
 
 public class Main {
-    private static Stack<BufferedImage> undoStack = new Stack<>();
-    private static Stack<BufferedImage> redoStack = new Stack<>();
     private static BufferedImage currentImage;
+    private static ImageHistory history = new ImageHistory();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -39,32 +39,35 @@ public class Main {
                 System.out.println("9. undo");
                 System.out.println("10. Redo");
                 System.out.println("11. Save and Exit");
+                System.out.println("12. Save");
                 int choice = scanner.nextInt();
 
                 switch (choice) {
                     case 1:
-                        applyFilter(new GrayScaleFilter());
+                        applyFilter(new GrayScaleFilter(), null);
                         break;
                     case 2:
-                        // applyFilter(new BrightnessFilter());
+                        System.out.println("- Enter brightness percentage-");
+                        int percentage = scanner.nextInt();
+                        applyFilter(new BrightnessFilter(), percentage);
                         break;
                     case 3:
-                         applyFilter(new BoxBlurFilter());
+                         applyFilter(new BoxBlurFilter(), null);
                         break;
                     case 4:
-                         applyFilter(new GaussianBlurFilter());
+                         applyFilter(new GaussianBlurFilter(), null);
                         break;
                     case 5:
-                         applyFilter(new MotionBlurFilter());
+                         applyFilter(new MotionBlurFilter(), null);
                         break;
                     case 6:
-                         applyFilter(new EmbossFilter());
+                         applyFilter(new EmbossFilter(), null);
                         break;
                     case 7:
-                         applyFilter(new SharpeningFilter());
+                         applyFilter(new SharpeningFilter(), null);
                         break;
                     case 8:
-                         applyFilter(new LaplacianFilter());
+                         applyFilter(new LaplacianFilter(), null);
                         break;
                     case 9:
                         undo();
@@ -76,6 +79,9 @@ public class Main {
                         ImageIO.write(currentImage, "png", new File("new_" + pathname));
                         System.out.println("Image saved as new_" + pathname);
                         return;
+                    case 12:
+                        ImageIO.write(currentImage, "png", new File("new_" + pathname));
+                        System.out.println("Image saved as new_" + pathname);
                     default:
                         System.out.println("Invalid choice. Please try again.");
                 }
@@ -85,38 +91,20 @@ public class Main {
         }
     }
 
-    public static void applyFilter(Filter filter) {
-
-        undoStack.push(deepCopy(currentImage));
-        redoStack.clear();
-        currentImage = filter.addFilter(currentImage);
+    public static void applyFilter(Filter filter, Integer param) {
+        ApplyFilterCommand command = new ApplyFilterCommand(currentImage, filter, param);
+        currentImage = command.execute();
+        history.executeCommand(command);
         System.out.println("Filter Applied.");
     }
 
     public static void undo() {
-        if (!undoStack.isEmpty()) {
-            redoStack.push(deepCopy(currentImage));
-            currentImage = undoStack.pop();
-            System.out.println("Undo Performed.");
-        } else {
-            System.out.println("No more undo steps available.");
-        }
+        currentImage = history.undo(currentImage);
+        System.out.println("Undo Performed.");
     }
 
     public static void redo() {
-        if (!redoStack.isEmpty()) {
-            undoStack.push(deepCopy(currentImage)); // Save current state in undo stack
-            currentImage = redoStack.pop();
-            System.out.println("Redo Performed.");
-        } else {
-            System.out.println("No more redo steps available.");
-        }
-    }
-
-
-    private static BufferedImage deepCopy(BufferedImage image) {
-        BufferedImage copy = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
-        copy.getGraphics().drawImage(image, 0, 0, null);
-        return copy;
+        currentImage = history.redo(currentImage);
+        System.out.println("Redo Performed.");
     }
 }

@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 public class GrayScaleFilter implements Filter {
 
     @Override
-    public BufferedImage addFilter(BufferedImage img) {
+    public BufferedImage addFilter(BufferedImage img, Integer param) {
         System.out.println("Applying Grayscale Filter.");
 
         // Create a new grayscale image

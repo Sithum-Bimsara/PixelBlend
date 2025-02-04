@@ -7,7 +7,7 @@ import java.awt.image.Kernel;
 public class MotionBlurFilter implements Filter {
 
     @Override
-    public BufferedImage addFilter(BufferedImage image) {
+    public BufferedImage addFilter(BufferedImage image, Integer param) {
         float[] MotionBlurKernel = {
                 1/5f, 1/5f, 1/5f, 1/5f, 1/5f,
                 0f, 1/5f, 1/5f, 1/5f, 1/5f,

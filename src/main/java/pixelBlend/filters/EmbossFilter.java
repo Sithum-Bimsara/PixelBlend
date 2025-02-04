@@ -7,7 +7,7 @@ import java.awt.image.Kernel;
 public class EmbossFilter implements Filter {
 
     @Override
-    public BufferedImage addFilter(BufferedImage image) {
+    public BufferedImage addFilter(BufferedImage image, Integer param) {
         float[] EmbossKernel = {
                 -2f, -1f,  0f,
                 -1f,  1f,  1f,
