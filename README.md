@@ -83,11 +83,50 @@ Here are some screenshots showcasing the application's functionality:
 ### Grayscale Filter
 <p align="center">
   <img src="assets/Indunil.jpg" alt="Screenshot" width="150">
-  <img src="assets/Laplacian_Indunil.jpg" alt="Screenshot" width="150">
+  <img src="assets/Grayscale_Indunil.jpg" alt="Screenshot" width="150">
 </p>
 
+### Brightness Filter
+<p align="center">
+  <img src="assets/Indunil.jpg" alt="Screenshot" width="150">
+  <img src="assets/Brightness_Indunil.jpg" alt="Screenshot" width="150">
+</p>
 
+### Embose Filter
+<p align="center">
+  <img src="assets/Indunil.jpg" alt="Screenshot" width="150">
+  <img src="assets/Embose_Indunil.jpg" alt="Screenshot" width="150">
+</p>
 
+### Box Blur Filter
+<p align="center">
+  <img src="assets/Indunil.jpg" alt="Screenshot" width="150">
+  <img src="assets/Box_Indunil.jpg" alt="Screenshot" width="150">
+</p>
+
+### Gaussian Blur Filter
+<p align="center">
+  <img src="assets/Indunil.jpg" alt="Screenshot" width="150">
+  <img src="assets/Gaussian_Indunil.jpg" alt="Screenshot" width="150">
+</p>
+
+### Motion Filter
+<p align="center">
+  <img src="assets/Indunil.jpg" alt="Screenshot" width="150">
+  <img src="assets/Motion_Indunil.jpg" alt="Screenshot" width="150">
+</p>
+
+### Sharpen Filter
+<p align="center">
+  <img src="assets/Indunil.jpg" alt="Screenshot" width="150">
+  <img src="assets/Sharpen_Indunil.jpg" alt="Screenshot" width="150">
+</p>
+
+### Laplacian Filter
+<p align="center">
+  <img src="assets/Indunil.jpg" alt="Screenshot" width="150">
+  <img src="assets/Laplacian_Indunil.jpg" alt="Screenshot" width="150">
+</p>
 
 ---
 
