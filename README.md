@@ -82,8 +82,10 @@ Image saved as new_photo.png
 Here are some screenshots showcasing the application's functionality:
 
 ### Grayscale Filter
-![Screenshot](assets/Indunil.png)
-![Screenshot](assets/Laplacian_Indunil.jpg)
+### Grayscale Filter
+<img src="assets/Indunil.jpg" alt="Screenshot" width="400">
+<img src="assets/Laplacian_Indunil.jpg" alt="Screenshot" width="400">
+
 
 
 ---
