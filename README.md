@@ -1,7 +1,6 @@
 # PixelBlend 🎨🖼️
 
-PixelBlend is a **Java-based image filtering application** that allows users to enhance and modify their photos using a variety of filters. Built using the **Decorator Design Pattern**, the app provides a flexible and scalable way to apply multiple filters while maintaining high performance.
-
+PixelBlend is a **Java-based image filtering application** that allows users to enhance and modify their photos using a variety of filters.
 ## Features 🚀
 - Apply various image filters:
   - 🏴 Grayscale
