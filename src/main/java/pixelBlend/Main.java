@@ -1,5 +1,8 @@
 package pixelBlend;
 
+import pixelBlend.filters.BrightnessFilter;
+import pixelBlend.handler.ImageHandler;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -9,14 +12,16 @@ public class Main {
     public static void main(String[] args) {
         try {
             String pathname = "pic.png";
-            BufferedImage image = ImageIO.read(new File(pathname));
-            System.out.println("Image Loaded Successfully");
-            System.out.println("Width: " + image.getWidth());
-            System.out.println("Height: " + image.getHeight());
+            ImageHandler imageHandler = new ImageHandler();
+
+            BufferedImage image = imageHandler.loadImage(pathname);
+
+            BrightnessFilter brightnessFilter = new BrightnessFilter();
+            image = brightnessFilter.addFilter(image, 200);
 
             pathname = "new" + pathname;
-            ImageIO.write(image, "png", new File(pathname));
-        } catch (IOException e) {
+            imageHandler.saveImage(image, pathname);
+        } catch (Exception e) {
             System.err.println("Error loading image: " + e.getMessage());
         }
     }
