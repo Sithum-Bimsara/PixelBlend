@@ -133,7 +133,7 @@ Here are some screenshots showcasing the application's functionality:
 ---
 
 ## Future Development 🌱
-- 🌐 Web Interface
+- 🌐 Web Interface !!
 - 🏎️ Performance Optimization
 - 🖼️ More Filters!
 
